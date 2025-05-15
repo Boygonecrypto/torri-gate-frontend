@@ -28,11 +28,16 @@ const VerifyEmail = () => {
     return <div>Verifying....</div>;
   }
   if (status === "success") {
-    return <h1>Email Verified Successfully</h1>;
+    return (
+      <div>
+        <h1>Email Verified Successfully</h1>;
+        <Link to="/login">
+          <button>Proceed to Login</button>
+        </Link>
+        ;
+      </div>
+    );
   }
-  <Link to="/login">
-    <button>Proceed to Login</button>
-  </Link>;
   return (
     <div>
       <h1>Verification Failed</h1>
