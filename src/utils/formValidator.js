@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+import ForgotPassword from "../pages/ForgotPassword";
 
 export const registerSchema = Yup.object().shape({
   fullName: Yup.string().required("Name is required"),
@@ -34,4 +35,10 @@ export const propertySchema = Yup.object().shape({
   kitchens: Yup.string().required("Number of kitchens is required"),
   price: Yup.string().required("Price is required"),
   paymentPeriod: Yup.string().required("Payment period is required"),
+});
+
+export const forgotPasswordSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
 });

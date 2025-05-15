@@ -26,3 +26,6 @@ Registration
 3.⁠ ⁠response - success or error
 4.⁠ ⁠redirect to the verify page
 error (display error)
+
+Login
+1. input validation
