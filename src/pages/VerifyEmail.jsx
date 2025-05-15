@@ -34,7 +34,6 @@ const VerifyEmail = () => {
         <Link to="/login">
           <button>Proceed to Login</button>
         </Link>
-        ;
       </div>
     );
   }
