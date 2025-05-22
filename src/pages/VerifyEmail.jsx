@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { axiosInstance } from "../utils/axiosInstance";
 import { useState, useEffect } from "react";
-import icon from "../assets/Layer_1.png";
+import icon from "../assets/verify.png";
 import { BounceLoader } from "react-spinners";
 import { MdCancel } from "react-icons/md";
 const VerifyEmail = () => {
