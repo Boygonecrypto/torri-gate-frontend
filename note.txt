@@ -20,12 +20,16 @@ FEATURES
 4.⁠ ⁠eamil sending
 5.⁠ ⁠Crud operations
 
-Registration
+registration
 1.⁠ ⁠input validation
 2.⁠ ⁠get the input and send to the api as a post request
 3.⁠ ⁠response - success or error
 4.⁠ ⁠redirect to the verify page
 error (display error)
 
-Login
-1. input validation
+Login 
+1.⁠ ⁠Input Validation
+
+LOGIN page
+Appcontext
+dashboard layout
