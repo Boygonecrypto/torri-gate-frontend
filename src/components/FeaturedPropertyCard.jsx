@@ -17,7 +17,7 @@ const FeaturedPropertyCard = ({
 }) => {
   return (
     <Link
-      // to={⁠ /property/${_id} ⁠}
+      to={`/property/${_id}`}
       className="w-full block lg:w-[325px] xl:w-[400px] h-[285px] mt-8"
     >
       <img
@@ -71,4 +71,4 @@ export default FeaturedPropertyCard;
 // Ensure that the necessary CSS styles are applied to match your design requirements.
 // The component is designed to be responsive and will adjust its layout based on the screen size.
 // Make sure to import the necessary icons from react-icons and any other dependencies you need.
-// Example usage of the FeaturedPropertyCard component: 
+// Example usage of the FeaturedPropertyCard component:
