@@ -29,7 +29,6 @@ error (display error)
 
 Login 
 1.⁠ ⁠Input Validation
-
 LOGIN page
 Appcontext
 dashboard layout

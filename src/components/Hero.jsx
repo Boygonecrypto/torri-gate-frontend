@@ -4,7 +4,7 @@ import Nav from "./layout/Nav";
 
 const Hero = () => {
   return (
-    <div className="heropage max-h-[720px] h-screen pb-8 ">
+    <div className="heropage lg:max-h-[720px] h-auto pb-8 ">
       <Nav />
       <div className="layout pt-24">
         <div className="  flex justify-center items-end ">
@@ -26,3 +26,7 @@ const Hero = () => {
 };
 
 export default Hero;
+// Note: The SearchForm component is assumed to be defined in the same directory.
+// It should contain the search functionality for properties.
+// The Nav component is assumed to be the navigation bar for the application.
+// The styles used in this component (like 'heropage', 'layout', etc.) should be defined in your CSS files.
