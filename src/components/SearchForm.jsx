@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiResetLeftFill } from "react-icons/ri";
-import { useState } from "react";
+import { useTenantContext } from "../hooks/useTenantContext";
 
 const SearchForm = () => {
+  const { setLocValue, resetFilters, setBudget, setType } = useTenantContext();
   const [location, setLocation] = useState("");
+  const [price, setPrice] = useState("");
+  const [preferences, setPreferences] = useState();
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(location);
+    setLocValue(location.trim());
+    setBudget(price);
+    setType(preferences);
+  };
+  const handleReset = () => {
+    resetFilters();
+    setLocation("");
+    setPrice("");
+    setPreferences("");
   };
   return (
     <div className=" max-w-[500px]  lg:max-w-[1030px] mx-auto w-full bg-[#fdfdfd] rounded-2xl p-3 lg:px-[14px] lg:py-[14px] mt-10">
-      <form className="flex flex-col lg:flex-row items-end gap-4">
+      <form
         onSubmit={handleSearch}
+        className="flex flex-col lg:flex-row items-end gap-4"
+      >
         <div className="w-full lg:[w-221px]">
           <label htmlFor="type" className="labelhero">
             Type
           </label>
-          <select id="type" className="select w-full bg-[#f6f6f6]">
+          <select
+            id="type"
+            className="select w-full bg-[#f6f6f6]"
+            value={preferences}
+            onChange={(e) => setPreferences(e.target.value)}
+          >
+            <option value="">Type</option>
             <option value="flat">Flat</option>
             <option value="duplex">Duplex</option>
             <option value="apartment">Apartment</option>
@@ -27,10 +46,14 @@ const SearchForm = () => {
             Budget
           </label>
           <input
-            type="text"
+            type="number"
             id="budget"
             placeholder="Budget"
             className="input w-full bg-[#f6f6f6]"
+            value={price}
+            onChange={(e) => {
+              setPrice(e.target.value);
+            }}
           />
         </div>
         <div className="w-full lg:[w-221px]">
@@ -42,8 +65,8 @@ const SearchForm = () => {
             id="budget"
             placeholder="Location"
             className="input w-full bg-[#f6f6f6]"
-            value={"Location"}
-            onChange={(e) => e.target.value} // Placeholder for actual location input handling
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
         <button
@@ -53,7 +76,10 @@ const SearchForm = () => {
           Search For Property
         </button>
       </form>
-      <button className="flex items-center gap-2 mt-2.5 cursor-pointer">
+      <button
+        onClick={handleReset}
+        className="flex items-center gap-2 mt-2.5 cursor-pointer"
+      >
         <RiResetLeftFill /> Reset Filters
       </button>
     </div>
